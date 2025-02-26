@@ -1,0 +1,113 @@
+# Gradle files
+.gradle/
+build/
+*/build/
+**/build/
+**/out/
+**/bin/
+**/gen/
+**/local.properties
+**/gradle-wrapper.jar
+**/gradle-wrapper.properties
+
+# Android Studio files
+.idea/
+*.iml
+*.hprof
+*.log
+*.orig
+*.swp
+*.swo
+*.DS_Store
+
+# User-specific files
+*.jks
+*.keystore
+*.properties
+*.user
+*.sublime-workspace
+*.sublime-project
+
+# Android specific files
+*.apk
+*.ap_
+*.dex
+*.class
+*.so
+*.jar
+*.war
+*.ear
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.hprof
+*.dSYM/
+*.apk
+*.ap_
+*.dex
+*.class
+*.so
+*.jar
+*.war
+*.ear
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.hprof
+*.dSYM/
+
+# Local configuration files
+local.properties
+*.iml
+*.hprof
+*.log
+*.orig
+*.swp
+*.swo
+*.DS_Store
+
+# Android Studio specific files
+.idea/
+*.iml
+*.hprof
+*.log
+*.orig
+*.swp
+*.swo
+*.DS_Store
+
+# Miscellaneous
+*.class
+*.jar
+*.war
+*.ear
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.hprof
+*.dSYM/
+*.apk
+*.ap_
+*.dex
+*.so
+
+# NDK
+obj/
+jni/obj/
+jniLibs/
+*.so
+
+# External Libraries
+libs/
+*.jar
+
+# Generated files
+gen/
+generated/
+build/
+out/
+bin/
+
