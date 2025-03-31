@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hero_title_find_quiz">Ready, Set, Quiz!</string>
+    <string name="hero_btn_find_quiz">Search</string>
+    <string name="hero_content_description_find_quiz">Find Quiz Hero Image</string>
+
+    <string name="hero_title_make_quiz">Your Quiz, Your Rule!</string>
+    <string name="hero_btn_make_quiz">Create Quiz</string>
+    <string name="hero_content_description_make_quiz">Create Quiz Hero Image</string>
+</resources>

@@ -6,23 +6,16 @@
     android:gravity="center"
     android:paddingVertical="7dp"
     android:paddingHorizontal="10dp"
-    android:background="@drawable/bg_button_pink_rounded"
+    android:background="@drawable/bg_button_rounded_blue"
     android:clickable="true"
     android:fontFamily="@font/montserrat_bold"
     android:focusable="true"
     >
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_trophy"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="500 Point"
-        android:layout_marginLeft="10dp"
+        android:text="Search"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/neutral_100"/>
-
 
 </LinearLayout>
