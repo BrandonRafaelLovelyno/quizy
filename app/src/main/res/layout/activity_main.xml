@@ -88,5 +88,41 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/todayQuizSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/recentQuizSection"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/neutral_100"
+            android:text="@string/today_quiz_title"
+            android:id="@+id/todayQuizTitle"
+            android:textSize="17sp"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintStart_toStartOf="@id/todayQuizSection"
+            app:layout_constraintTop_toTopOf="@id/todayQuizSection"
+            android:layout_marginStart="30dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/todayQuizRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/todayQuizTitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/todayQuizSection"
+            app:layout_constraintEnd_toEndOf="@id/todayQuizSection"
+            android:layout_marginTop="10dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

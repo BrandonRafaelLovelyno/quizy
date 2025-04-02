@@ -13,4 +13,6 @@
     <string name="quiz_attempt_rank">Rank 1/20</string>
     <string name="quiz_attempt_point">650 point</string>
 
+    <string name="today_quiz_title">Today\'s Quiz</string>
+
 </resources>
