@@ -7,4 +7,10 @@
     <string name="hero_title_make_quiz">Your Quiz, Your Rule!</string>
     <string name="hero_btn_make_quiz">Create Quiz</string>
     <string name="hero_content_description_make_quiz">Create Quiz Hero Image</string>
+
+    <string name="recent_quiz_title">Recent Quiz Attempts</string>
+    <string name="quiz_attempt_quiz_name">Object Oriented Programming</string>
+    <string name="quiz_attempt_rank">Rank 1/20</string>
+    <string name="quiz_attempt_point">650 point</string>
+
 </resources>
