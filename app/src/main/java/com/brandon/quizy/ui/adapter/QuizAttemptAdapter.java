@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class QuizAttemptAdapter extends RecyclerView.Adapter<QuizAttemptAdapter.ItemViewHolder> {
-    private List<QuizAttemptItem> quizAttemptItems;
+    final private List<QuizAttemptItem> quizAttemptItems;
 
     public QuizAttemptAdapter(List<QuizAttemptItem> quizAttemptItems) {
         this.quizAttemptItems = quizAttemptItems;
