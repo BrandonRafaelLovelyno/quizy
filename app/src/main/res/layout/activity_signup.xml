@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/primary_500"
+    android:paddingHorizontal="30dp"
+    android:paddingVertical="40dp"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/img_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="48dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/neutral_100"
+        android:text="@string/signup_title"
+        android:id="@+id/signupTitle"
+        android:textSize="30sp"
+        android:fontFamily="@font/montserrat_bold"
+        app:layout_constraintStart_toStartOf="@id/logo"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        android:layout_marginTop="30dp"
+        android:letterSpacing="0.1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/neutral_500"
+        android:text="@string/signup_subtitle"
+        android:id="@+id/signupSubtitle"
+        android:textSize="15sp"
+        android:fontFamily="@font/montserrat_semibold"
+        app:layout_constraintStart_toStartOf="@id/signupTitle"
+        app:layout_constraintTop_toBottomOf="@id/signupTitle"
+        android:letterSpacing="0.05"
+        />
+
+    <LinearLayout
+        android:id="@+id/signupInputContainer"
+        android:orientation="vertical"
+        android:background="@drawable/bg_div_transparent_rounded"
+        android:padding="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/signupSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/editName"
+            android:fontFamily="@font/montserrat_semibold"
+            android:autofillHints="username"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:drawableStart="@drawable/ic_user"
+            android:drawablePadding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:hint="@string/signup_full_name_placeholder"
+            android:textColor="@color/neutral_100"
+            android:textColorHint="@color/neutral_500"
+            android:background="@null"
+            android:layout_marginBottom="20dp"
+            android:padding="5dp" />
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:fontFamily="@font/montserrat_semibold"
+            android:minHeight="48dp"
+            android:autofillHints="emailAddress"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="20dp"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="20dp"
+            android:hint="@string/signup_email_placeholder"
+            android:textColor="@color/neutral_100"
+            android:textColorHint="@color/neutral_500"
+            android:background="@null"
+            android:padding="5dp" />
+
+        <EditText
+            android:id="@+id/editPassword"
+            android:fontFamily="@font/montserrat_semibold"
+            android:minHeight="48dp"
+            android:autofillHints="password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:hint="@string/signup_password_placeholder"
+            android:drawableStart="@drawable/ic_password"
+            android:drawablePadding="20dp"
+            android:textColor="@color/neutral_100"
+            android:textColorHint="@color/neutral_500"
+            android:background="@null"
+            android:padding="5dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnCreateAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/neutral_100"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_button_rounded_blue"
+        app:layout_constraintTop_toBottomOf="@id/signupInputContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp">
+        <TextView
+            android:id="@+id/txtBtnCreateAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@string/signup_button_signup"
+            android:textColor="@color/neutral_100"
+            android:fontFamily="@font/montserrat_bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtLoginQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textSize="13sp"
+        android:text="@string/signup_login_question"
+        android:textColor="@color/neutral_500"
+        app:layout_constraintTop_toBottomOf="@id/btnCreateAccount"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        />
+
+    <TextView
+        android:id="@+id/txtLoginLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="13sp"
+        android:text="@string/signup_login_link"
+        android:textColor="@color/neutral_100"
+        app:layout_constraintTop_toBottomOf="@id/txtLoginQuestion"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="5dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
