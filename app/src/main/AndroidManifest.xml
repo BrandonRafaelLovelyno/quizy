@@ -27,6 +27,13 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:label="LoginActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        </activity>
+
 
         <activity
             android:name=".MainActivity"
