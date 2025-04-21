@@ -37,11 +37,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void setOnClickListener(){
-        binding.btnCreateAccount.setOnClickListener(v->{
-            setButtonEnable(false);
-            createUser();
-            setButtonEnable(true);
-        });
+        binding.btnCreateAccount.setOnClickListener(this::createUser);
 
         binding.txtLoginLink.setOnClickListener(this::startLoginActivity);
     }
@@ -89,13 +85,9 @@ public class SignupActivity extends AppCompatActivity {
         binding.btnCreateAccount.setAlpha(alpha);
     }
 
-    private void onUserCreation(Task<AuthResult> task) {
+    private void onCreatedUser(Task<AuthResult> task) {
         if (task.isSuccessful()) {
-            Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show();
-
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            finish();
+            startMainActivity();
         } else {
             Toast.makeText(this, "Signup failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
         }
@@ -104,9 +96,18 @@ public class SignupActivity extends AppCompatActivity {
     private void startLoginActivity(View v) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+        finish();
     }
 
-    private void createUser() {
+    private void startMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void createUser(View v) {
+        setButtonEnable(false);
+
         Bundle input = getUserInput();
 
         String name = input.getString("name");
@@ -118,6 +119,9 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this::onUserCreation);
+                .addOnCompleteListener(t -> {
+                    onCreatedUser(t);
+                    setButtonEnable(true);
+                });
     }
 }
