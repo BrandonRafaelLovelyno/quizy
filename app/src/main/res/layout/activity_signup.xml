@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/imgLogo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/img_logo"
@@ -24,8 +24,8 @@
         android:id="@+id/signupTitle"
         android:textSize="30sp"
         android:fontFamily="@font/montserrat_bold"
-        app:layout_constraintStart_toStartOf="@id/logo"
-        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintStart_toStartOf="@id/imgLogo"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
         android:layout_marginTop="30dp"
         android:letterSpacing="0.1"
         />
@@ -77,7 +77,7 @@
             android:padding="5dp" />
 
         <EditText
-            android:id="@+id/editEmail"
+            android:id="@+id/editTxtEmail"
             android:fontFamily="@font/montserrat_semibold"
             android:minHeight="48dp"
             android:autofillHints="emailAddress"
@@ -95,7 +95,7 @@
             android:padding="5dp" />
 
         <EditText
-            android:id="@+id/editPassword"
+            android:id="@+id/editTxtPassword"
             android:fontFamily="@font/montserrat_semibold"
             android:minHeight="48dp"
             android:autofillHints="password"

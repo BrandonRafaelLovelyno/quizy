@@ -1,6 +1,8 @@
 package com.brandon.quizy;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -26,14 +28,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setupUI();
+        fetchData();
+    }
+
+    private void setupUI(){
         initBinding();
-        initQuizAttemptRecyclerView();
-        initTodayQuizRecyclerView();
+        setOnClickListener();
     }
 
     private void initBinding() {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+    }
+
+    private void setOnClickListener(){
+        binding.heroCreateQuiz.btnCreate.setOnClickListener(this::startCreateQuizActivity);
+    }
+
+    private void fetchData(){
+        initQuizAttemptRecyclerView();
+        initTodayQuizRecyclerView();
+    }
+
+    private void startCreateQuizActivity(View v){
+        Intent intent = new Intent(this, CreateQuizActivity.class);
+        startActivity(intent);
     }
 
     private void initQuizAttemptRecyclerView() {

@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.brandon.quizy.R;
@@ -53,7 +52,7 @@ public class TodayQuizAdapter extends RecyclerView.Adapter<TodayQuizAdapter.Item
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             categoryView = itemView.findViewById(R.id.quizCategory);
-            imgView = itemView.findViewById(R.id.image);
+            imgView = itemView.findViewById(R.id.imgHero);
             progressTextView = itemView.findViewById(R.id.quizProgressText);
             progressBarForegroundView = itemView.findViewById(R.id.progressBarForeground);
             progressBarContainerView = itemView.findViewById(R.id.progressBarContainer);

@@ -41,6 +41,13 @@
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.MyApplication.NoActionBar">
         </activity>
+
+        <activity
+            android:name=".CreateQuizActivity"
+            android:exported="true"
+            android:label="CreateQuizActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

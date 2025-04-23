@@ -26,7 +26,7 @@
         android:paddingVertical="15dp">
 
         <ImageView
-            android:id="@+id/image"
+            android:id="@+id/imgHero"
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:contentDescription="@string/hero_content_description_find_quiz"
@@ -43,7 +43,7 @@
             android:orientation="vertical"
             android:gravity="center_vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintStart_toEndOf="@id/imgHero"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView

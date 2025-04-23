@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_quiz_greeting">Hey there!</string>
+    <string name="create_quiz_title">What is the name of the Quiz?</string>
+    <string name="create_quiz_title_placeholder">Enter name of the quiz</string>
+    <string name="create_quiz_button_create">Continue</string>
+</resources>

@@ -61,8 +61,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private Bundle getUserInput() {
-        EditText editEmail = binding.editEmail;
-        EditText editPassword = binding.editPassword;
+        EditText editEmail = binding.editTxtEmail;
+        EditText editPassword = binding.editTxtPassword;
 
         String email = editEmail.getText().toString().trim();
         String password = editPassword.getText().toString().trim();

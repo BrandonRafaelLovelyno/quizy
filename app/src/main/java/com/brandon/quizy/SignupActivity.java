@@ -61,8 +61,8 @@ public class SignupActivity extends AppCompatActivity {
 
     private Bundle getUserInput() {
         EditText editName = binding.editName;
-        EditText editEmail = binding.editEmail;
-        EditText editPassword = binding.editPassword;
+        EditText editEmail = binding.editTxtEmail;
+        EditText editPassword = binding.editTxtPassword;
 
         String name = editName.getText().toString().trim();
         String email = editEmail.getText().toString().trim();

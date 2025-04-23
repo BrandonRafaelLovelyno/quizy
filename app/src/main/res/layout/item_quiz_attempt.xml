@@ -9,7 +9,7 @@
     android:background="@drawable/bg_div_transparent_rounded">
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/imgHero"
         android:layout_width="85dp"
         android:layout_height="85dp"
         android:scaleType="center"
@@ -25,7 +25,7 @@
         android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/image"
+        app:layout_constraintTop_toBottomOf="@id/imgHero"
         app:layout_constraintStart_toStartOf="parent"
         android:text="@string/quiz_attempt_quiz_name"
         android:fontFamily="@font/montserrat_semibold"

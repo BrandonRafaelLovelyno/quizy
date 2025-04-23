@@ -52,7 +52,7 @@ public class QuizAttemptAdapter extends RecyclerView.Adapter<QuizAttemptAdapter.
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             quizNameView = itemView.findViewById(R.id.quizTitle);
-            imgView = itemView.findViewById(R.id.image);
+            imgView = itemView.findViewById(R.id.imgHero);
             rankView = itemView.findViewById(R.id.quizRank);
             pointView = itemView.findViewById(R.id.quizPoint);
         }
