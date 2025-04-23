@@ -23,11 +23,11 @@
         android:text="@string/signup_title"
         android:id="@+id/signupTitle"
         android:textSize="30sp"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/montserrat_extrabold"
         app:layout_constraintStart_toStartOf="@id/imgLogo"
         app:layout_constraintTop_toBottomOf="@id/imgLogo"
         android:layout_marginTop="30dp"
-        android:letterSpacing="0.1"
+        android:letterSpacing="0.05"
         />
 
     <TextView
