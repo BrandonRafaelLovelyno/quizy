@@ -19,11 +19,28 @@ public class SignupActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initialize();
+    }
 
-        initBinding();
+    private void initialize() {
         initFirebase();
+
+        if (isUserLoggedIn()) {
+            startMainActivity();
+            return;
+        }
+
+        setupUI();
+    }
+
+    private boolean isUserLoggedIn() {
+        return mAuth.getCurrentUser() != null;
+    }
+
+    private void setupUI() {
+        initBinding();
         setOnClickListener();
     }
 
