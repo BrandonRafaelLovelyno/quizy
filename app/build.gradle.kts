@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -16,14 +15,17 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
+        debug {
+            buildConfigField("String", "BACKEND_URL", "\"https://your-api-server.com/api/\"")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "BACKEND_URL", "\"https://your-api-server.com/api/\"")
         }
     }
     compileOptions {
@@ -31,6 +33,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     buildFeatures {
+        buildConfig = true
         viewBinding = true
     }
 }
@@ -40,7 +43,6 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
-    implementation(libs.firebase.auth)
     implementation(libs.credentials)
     implementation(libs.credentials.play.services.auth)
     implementation(libs.googleid)
@@ -49,4 +51,6 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation(libs.glide)
     annotationProcessor(libs.glideCompiler)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson.converter)
 }
