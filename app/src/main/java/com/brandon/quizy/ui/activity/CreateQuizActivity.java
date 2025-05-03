@@ -1,4 +1,4 @@
-package com.brandon.quizy;
+package com.brandon.quizy.ui.activity;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -6,11 +6,11 @@ import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.brandon.quizy.R;
 import com.brandon.quizy.databinding.ActivityCreateQuizBinding;
 import com.brandon.quizy.utils.InputValidator;
 

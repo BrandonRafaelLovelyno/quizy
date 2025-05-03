@@ -12,7 +12,7 @@
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
     android:paddingVertical="40dp"
-    tools:context=".MainActivity">
+    tools:context=".ui.activity.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBar"

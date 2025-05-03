@@ -1,4 +1,4 @@
-package com.brandon.quizy;
+package com.brandon.quizy.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,13 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.brandon.quizy.databinding.ActivityLoginBinding;
 import com.brandon.quizy.utils.ExceptionHandler;
 import com.brandon.quizy.utils.InputValidator;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +23,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initialize() {
-        initFirebase();
-
         if (isUserLoggedIn()) {
             startMainActivity();
             return;
@@ -38,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean isUserLoggedIn() {
-        return mAuth.getCurrentUser() != null;
+        return false; // Always return false since Firebase is removed
     }
 
     private void setupUI() {
@@ -49,10 +43,6 @@ public class LoginActivity extends AppCompatActivity {
     private void initBinding() {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-    }
-
-    private void initFirebase() {
-        mAuth = FirebaseAuth.getInstance();
     }
 
     private void setOnClickListener() {
@@ -109,15 +99,6 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setAlpha(alpha);
     }
 
-    private void onLoggedIn(Task<AuthResult> task) {
-        if (task.isSuccessful()) {
-            startMainActivity();
-        } else {
-            String errorMessage = ExceptionHandler.getFriendlyErrorMessage(task.getException());
-            Toast.makeText(this, "Login failed: " + errorMessage, Toast.LENGTH_LONG).show();
-        }
-    }
-
     private void login(View v) {
         setButtonEnable(false);
 
@@ -130,9 +111,8 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(t -> {
-            onLoggedIn(t);
-            setButtonEnable(true);
-        });
+        // Removed Firebase login code
+        Toast.makeText(this, "Login functionality removed.", Toast.LENGTH_LONG).show();
+        setButtonEnable(true);
     }
 }

@@ -1,4 +1,4 @@
-package com.brandon.quizy;
+package com.brandon.quizy.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

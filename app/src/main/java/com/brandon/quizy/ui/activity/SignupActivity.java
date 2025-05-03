@@ -1,4 +1,4 @@
-package com.brandon.quizy;
+package com.brandon.quizy.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,37 +9,37 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.brandon.quizy.databinding.ActivitySignupBinding;
+import com.brandon.quizy.network.model.response.SignupResponse;
+import com.brandon.quizy.network.repository.AuthRepository;
+import com.brandon.quizy.network.repository.RepositoryCallback;
 import com.brandon.quizy.utils.InputValidator;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class SignupActivity extends AppCompatActivity {
     private ActivitySignupBinding binding;
-    private FirebaseAuth mAuth;
+    private AuthRepository mAuthRepo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initialize();
-    }
-
-    private void initialize() {
-        initFirebase();
 
         if (isUserLoggedIn()) {
             startMainActivity();
             return;
         }
 
-        setupUI();
+        initUI();
+        initVariables();
+    }
+
+    private void initVariables() {
+        mAuthRepo = new AuthRepository();
     }
 
     private boolean isUserLoggedIn() {
-        return mAuth.getCurrentUser() != null;
+        return false; // Always return false since Firebase is removed
     }
 
-    private void setupUI() {
+    private void initUI() {
         initBinding();
         setOnClickListener();
     }
@@ -49,13 +49,8 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
     }
 
-    private void initFirebase(){
-        mAuth = FirebaseAuth.getInstance();
-    }
-
     private void setOnClickListener(){
-        binding.btnCreateAccount.setOnClickListener(this::createUser);
-
+        binding.btnCreateAccount.setOnClickListener(this::signup);
         binding.txtLoginLink.setOnClickListener(this::startLoginActivity);
     }
 
@@ -102,14 +97,6 @@ public class SignupActivity extends AppCompatActivity {
         binding.btnCreateAccount.setAlpha(alpha);
     }
 
-    private void onCreatedUser(Task<AuthResult> task) {
-        if (task.isSuccessful()) {
-            startMainActivity();
-        } else {
-            Toast.makeText(this, "Signup failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-        }
-    }
-
     private void startLoginActivity(View v) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
@@ -122,7 +109,19 @@ public class SignupActivity extends AppCompatActivity {
         finish();
     }
 
-    private void createUser(View v) {
+    private void onSignupSuccess(SignupResponse response) {
+        Toast.makeText(this, "Verification email sent.", Toast.LENGTH_SHORT).show();
+    }
+
+    private void onSignupError(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void onSignupComplete(){
+        setButtonEnable(true);
+    }
+
+    private void signup(View v) {
         setButtonEnable(false);
 
         Bundle input = getUserInput();
@@ -135,10 +134,9 @@ public class SignupActivity extends AppCompatActivity {
             return;
         }
 
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(t -> {
-                    onCreatedUser(t);
-                    setButtonEnable(true);
-                });
+        RepositoryCallback<SignupResponse> callback = mAuthRepo.makeRepositoryCallback(this::onSignupSuccess, this::onSignupError, this::onSignupComplete);
+        mAuthRepo.signup(email, name, password, callback);
+
+
     }
 }
